@@ -1,5 +1,7 @@
 package com.sk89q.example.commands.bukkit;
 
+import com.sk89q.bukkit.util.BukkitCommandsManager;
+import com.sk89q.bukkit.util.CommandsManagerRegistration;
 import com.sk89q.example.commands.bukkit.commands.ExampleCommand;
 import com.sk89q.minecraft.util.commands.CommandException;
 import com.sk89q.minecraft.util.commands.CommandPermissionsException;
