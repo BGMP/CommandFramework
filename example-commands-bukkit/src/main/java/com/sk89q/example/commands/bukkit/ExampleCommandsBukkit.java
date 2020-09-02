@@ -8,11 +8,14 @@ import com.sk89q.minecraft.util.commands.CommandPermissionsException;
 import com.sk89q.minecraft.util.commands.CommandUsageException;
 import com.sk89q.minecraft.util.commands.CommandsManager;
 import com.sk89q.minecraft.util.commands.MissingNestedCommandException;
+import com.sk89q.minecraft.util.commands.ScopeMismatchException;
 import com.sk89q.minecraft.util.commands.WrappedCommandException;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Arrays;
 
 public class ExampleCommandsBukkit extends JavaPlugin {
     @SuppressWarnings("rawtypes")
@@ -24,6 +27,13 @@ public class ExampleCommandsBukkit extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         try {
             this.commandsManager.execute(command.getName(), args, sender, sender);
+        } catch (ScopeMismatchException exception) {
+            String[] scopes = exception.getScopes();
+            if (!Arrays.asList(scopes).contains("player")) {
+                sender.sendMessage("You must use the console to execute this command.");
+            } else {
+                sender.sendMessage("You must be a player to execute this command.");
+            }
         } catch (CommandPermissionsException exception) {
             sender.sendMessage("You do not have permission.");
         } catch (MissingNestedCommandException exception) {

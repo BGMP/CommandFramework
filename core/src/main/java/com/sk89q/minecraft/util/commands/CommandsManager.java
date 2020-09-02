@@ -507,6 +507,11 @@ public abstract class CommandsManager<T> {
             }
         }
 
+        if (!scopeMatches(method, player)) {
+            CommandScopes scopes = method.getAnnotation(CommandScopes.class); // Ensured to be not null by {scopeMatches()}
+            throw new ScopeMismatchException("CommandSender scope mismatch.", scopes.value());
+        }
+
         if(!hasPermission(method, player)) {
             throw new CommandPermissionsException();
         }
@@ -627,6 +632,28 @@ public abstract class CommandsManager<T> {
     }
 
     /**
+     * Returns whether the scopes match the execution instance.
+     *
+     * @param method the method
+     * @param player the player
+     * @return true if the provided scopes match the declaration
+     */
+    protected boolean scopeMatches(Method method, T player) {
+        CommandScopes scopes = method.getAnnotation(CommandScopes.class);
+        if (scopes == null) {
+            return true;
+        }
+
+        for (String scope : scopes.value()) {
+            if (scopeMatches(player, scope)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Returns whether a player permission..
      *
      * @param player the player
@@ -634,6 +661,15 @@ public abstract class CommandsManager<T> {
      * @return true if permission is granted
      */
     public abstract boolean hasPermission(T player, String permission);
+
+    /**
+     * Returns whether the scope matches the provided player (sender)
+     *
+     * @param player the player
+     * @param scope the permission
+     * @return true if the scope matches
+     */
+    public abstract boolean scopeMatches(T player, String scope);
 
     /**
      * Get the injector used to create new instances. This can be
