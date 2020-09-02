@@ -14,13 +14,29 @@
     <module>example-commands-bukkit</module>
   </modules>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>bgm</id>
+      <url>ftp://bgmp.cl/www</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <issueManagement>
+    <url>https://github.com/BGMP/CommandFramework/issues</url>
+  </issueManagement>
+
   <scm>
-    <connection>scm:git:git://github.com/OvercastNetwork/sk89q-command-framework.git</connection>
-    <developerConnection>scm:git:git@github.com:OvercastNetwork/sk89q-command-framework.git</developerConnection>
-    <url>https://github.com/OvercastNetwork/sk89q-command-framework</url>
+    <connection>scm:git:git://github.com/BGMP/CommandFramework</connection>
   </scm>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ftp</artifactId>
+        <version>1.0-beta-6</version>
+      </extension>
+    </extensions>
     <sourceDirectory>${project.basedir}/src/main/java/</sourceDirectory>
 
     <!-- Plugins -->
