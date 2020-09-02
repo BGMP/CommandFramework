@@ -64,6 +64,5 @@ public class ExampleCommandsBukkit extends JavaPlugin {
 
         exampleCommandRegistration.register(ExampleCommand.class);
         exampleNestedCommandRegistration.register(ExampleNestedCommand.ExampleNestedCommandNode.class);
-        exampleNestedCommandRegistration.register(ExampleNestedCommand.class);
     }
 }
