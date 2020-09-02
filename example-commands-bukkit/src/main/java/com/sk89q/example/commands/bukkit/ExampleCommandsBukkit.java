@@ -3,6 +3,7 @@ package com.sk89q.example.commands.bukkit;
 import com.sk89q.bukkit.util.BukkitCommandsManager;
 import com.sk89q.bukkit.util.CommandsManagerRegistration;
 import com.sk89q.example.commands.bukkit.commands.ExampleCommand;
+import com.sk89q.example.commands.bukkit.commands.ExampleNestedCommand;
 import com.sk89q.minecraft.util.commands.CommandException;
 import com.sk89q.minecraft.util.commands.CommandPermissionsException;
 import com.sk89q.minecraft.util.commands.CommandUsageException;
@@ -20,7 +21,8 @@ import java.util.Arrays;
 public class ExampleCommandsBukkit extends JavaPlugin {
     @SuppressWarnings("rawtypes")
     private CommandsManager commandsManager;
-    private CommandsManagerRegistration commandsManagerRegistration;
+    private CommandsManagerRegistration exampleCommandRegistration;
+    private CommandsManagerRegistration exampleNestedCommandRegistration;
 
     @SuppressWarnings("unchecked")
     @Override
@@ -57,8 +59,11 @@ public class ExampleCommandsBukkit extends JavaPlugin {
     @Override
     public void onEnable() {
         commandsManager = new BukkitCommandsManager();
-        commandsManagerRegistration = new CommandsManagerRegistration(this, commandsManager);
+        exampleCommandRegistration = new CommandsManagerRegistration(this, commandsManager);
+        exampleNestedCommandRegistration = new CommandsManagerRegistration(this, this, new ExampleNestedCommand.ExampleNestedCommandTabCompleter(), commandsManager);
 
-        commandsManagerRegistration.register(ExampleCommand.class);
+        exampleCommandRegistration.register(ExampleCommand.class);
+        exampleNestedCommandRegistration.register(ExampleNestedCommand.ExampleNestedCommandNode.class);
+        exampleNestedCommandRegistration.register(ExampleNestedCommand.class);
     }
 }
