@@ -1,12 +1,30 @@
-# Maven
+# Maven generated files
 target/
 dependency-reduced-pom.xml
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
+# Mac OSX generated files
+.DS_Store
 
-# IntelliJ
+# Eclipse generated files
+.classpath
+.project
+.settings
+
+# IntelliJ IDEA
+.idea
 *.iml
+
+# Vim generated files
+*~
+*.swp
+
+# XCode 3 and 4 generated files
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+*class
