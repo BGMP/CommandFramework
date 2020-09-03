@@ -10,10 +10,12 @@ import com.sk89q.minecraft.util.commands.CommandUsageException;
 import com.sk89q.minecraft.util.commands.CommandsManager;
 import com.sk89q.minecraft.util.commands.MissingNestedCommandException;
 import com.sk89q.minecraft.util.commands.ScopeMismatchException;
+import com.sk89q.minecraft.util.commands.TabCompletion;
 import com.sk89q.minecraft.util.commands.WrappedCommandException;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
@@ -21,8 +23,7 @@ import java.util.Arrays;
 public class ExampleCommandsBukkit extends JavaPlugin {
     @SuppressWarnings("rawtypes")
     private CommandsManager commandsManager;
-    private CommandsManagerRegistration exampleCommandRegistration;
-    private CommandsManagerRegistration exampleNestedCommandRegistration;
+    private CommandsManagerRegistration defaultRegistration;
 
     @SuppressWarnings("unchecked")
     @Override
@@ -59,10 +60,36 @@ public class ExampleCommandsBukkit extends JavaPlugin {
     @Override
     public void onEnable() {
         commandsManager = new BukkitCommandsManager();
-        exampleCommandRegistration = new CommandsManagerRegistration(this, commandsManager);
-        exampleNestedCommandRegistration = new CommandsManagerRegistration(this, this, new ExampleNestedCommand.ExampleNestedCommandTabCompleter(), commandsManager);
+        defaultRegistration = new CommandsManagerRegistration(this, commandsManager);
 
-        exampleCommandRegistration.register(ExampleCommand.class);
-        exampleNestedCommandRegistration.register(ExampleNestedCommand.ExampleNestedCommandNode.class);
+        registerCommands(ExampleCommand.class, ExampleNestedCommand.class);
+    }
+
+    public void registerCommands(Class<?>... classes) {
+        for (Class<?> clazz : classes) {
+            final Class<?>[] subclasses = clazz.getClasses();
+
+            if (subclasses.length == 0) defaultRegistration.register(clazz);
+            else {
+                TabCompleter tabCompleter = null;
+                Class<?> nestNode = null;
+                for (Class<?> subclass : subclasses) {
+                    if (subclass.isAnnotationPresent(TabCompletion.class)) {
+                        try {
+                            tabCompleter = (TabCompleter) subclass.newInstance();
+                        } catch (InstantiationException | IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    } else nestNode = subclass;
+                }
+
+                if (tabCompleter == null) defaultRegistration.register(subclasses[0]);
+                else {
+                    CommandsManagerRegistration customRegistration = new CommandsManagerRegistration(this, this, tabCompleter, commandsManager);
+                    if (subclasses.length == 1) customRegistration.register(clazz);
+                    else customRegistration.register(nestNode);
+                }
+            }
+        }
     }
 }

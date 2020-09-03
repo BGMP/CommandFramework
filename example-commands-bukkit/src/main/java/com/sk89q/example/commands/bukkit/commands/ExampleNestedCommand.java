@@ -5,6 +5,7 @@ import com.sk89q.minecraft.util.commands.CommandContext;
 import com.sk89q.minecraft.util.commands.CommandPermissions;
 import com.sk89q.minecraft.util.commands.CommandScopes;
 import com.sk89q.minecraft.util.commands.NestedCommand;
+import com.sk89q.minecraft.util.commands.TabCompletion;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.EntityType;
@@ -59,6 +60,7 @@ public class ExampleNestedCommand {
         }
     }
 
+    @TabCompletion
     public static class ExampleNestedCommandTabCompleter implements TabCompleter {
         @Override
         public List<String> onTabComplete(CommandSender sender, org.bukkit.command.Command command, String alias, String[] args) {
