@@ -1,4 +1,4 @@
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.commands.exceptions;
 
 public class CommandNumberFormatException extends CommandException {
 

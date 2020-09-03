@@ -1,11 +1,11 @@
 package com.sk89q.example.commands.bukkit.commands;
 
-import com.sk89q.minecraft.util.commands.Command;
+import com.sk89q.minecraft.util.commands.annotations.Command;
 import com.sk89q.minecraft.util.commands.CommandContext;
-import com.sk89q.minecraft.util.commands.CommandPermissions;
-import com.sk89q.minecraft.util.commands.CommandScopes;
-import com.sk89q.minecraft.util.commands.NestedCommand;
-import com.sk89q.minecraft.util.commands.TabCompletion;
+import com.sk89q.minecraft.util.commands.annotations.CommandPermissions;
+import com.sk89q.minecraft.util.commands.annotations.CommandScopes;
+import com.sk89q.minecraft.util.commands.annotations.NestedCommand;
+import com.sk89q.minecraft.util.commands.annotations.TabCompletion;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.EntityType;

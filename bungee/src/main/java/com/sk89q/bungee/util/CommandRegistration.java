@@ -8,7 +8,7 @@ import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
 
-import com.sk89q.minecraft.util.commands.Command;
+import com.sk89q.minecraft.util.commands.annotations.Command;
 import com.sk89q.minecraft.util.commands.CommandsManager;
 
 public class CommandRegistration {

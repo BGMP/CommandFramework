@@ -19,6 +19,11 @@
 
 package com.sk89q.minecraft.util.commands;
 
+import com.sk89q.minecraft.util.commands.exceptions.CommandException;
+import com.sk89q.minecraft.util.commands.exceptions.CommandNumberFormatException;
+import com.sk89q.minecraft.util.commands.exceptions.CommandUsageException;
+import com.sk89q.minecraft.util.commands.exceptions.SuggestException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

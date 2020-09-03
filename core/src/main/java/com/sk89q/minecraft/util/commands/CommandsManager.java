@@ -19,6 +19,21 @@
 
 package com.sk89q.minecraft.util.commands;
 
+import com.sk89q.minecraft.util.commands.annotations.Command;
+import com.sk89q.minecraft.util.commands.annotations.CommandAlias;
+import com.sk89q.minecraft.util.commands.annotations.CommandPermissions;
+import com.sk89q.minecraft.util.commands.annotations.CommandScopes;
+import com.sk89q.minecraft.util.commands.annotations.NestedCommand;
+import com.sk89q.minecraft.util.commands.exceptions.CommandException;
+import com.sk89q.minecraft.util.commands.exceptions.CommandPermissionsException;
+import com.sk89q.minecraft.util.commands.exceptions.CommandRegistrationException;
+import com.sk89q.minecraft.util.commands.exceptions.CommandUsageException;
+import com.sk89q.minecraft.util.commands.exceptions.MissingNestedCommandException;
+import com.sk89q.minecraft.util.commands.exceptions.ScopeMismatchException;
+import com.sk89q.minecraft.util.commands.exceptions.SuggestException;
+import com.sk89q.minecraft.util.commands.exceptions.UnhandledCommandException;
+import com.sk89q.minecraft.util.commands.exceptions.WrappedCommandException;
+import com.sk89q.minecraft.util.commands.injection.Injector;
 import com.sk89q.util.StringUtil;
 
 import java.lang.reflect.InvocationTargetException;

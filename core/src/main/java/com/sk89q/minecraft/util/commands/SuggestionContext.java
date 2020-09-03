@@ -22,6 +22,7 @@ package com.sk89q.minecraft.util.commands;
 import java.util.List;
 import javax.annotation.Nullable;
 
+import com.sk89q.minecraft.util.commands.exceptions.SuggestException;
 import com.sk89q.util.StringUtil;
 
 /**

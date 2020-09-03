@@ -19,8 +19,8 @@
 
 package com.sk89q.bukkit.util;
 
-import com.sk89q.minecraft.util.commands.Command;
-import com.sk89q.minecraft.util.commands.CommandPermissions;
+import com.sk89q.minecraft.util.commands.annotations.Command;
+import com.sk89q.minecraft.util.commands.annotations.CommandPermissions;
 import com.sk89q.minecraft.util.commands.CommandsManager;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;

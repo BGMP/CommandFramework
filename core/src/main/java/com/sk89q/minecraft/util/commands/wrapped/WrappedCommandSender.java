@@ -1,4 +1,4 @@
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.commands.wrapped;
 
 public interface WrappedCommandSender {
     String getName();

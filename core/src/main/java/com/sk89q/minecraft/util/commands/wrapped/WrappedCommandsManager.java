@@ -1,4 +1,6 @@
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.commands.wrapped;
+
+import com.sk89q.minecraft.util.commands.CommandsManager;
 
 public class WrappedCommandsManager extends CommandsManager<WrappedCommandSender> {
     @Override

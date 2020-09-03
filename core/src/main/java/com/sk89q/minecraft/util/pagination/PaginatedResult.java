@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.sk89q.minecraft.util.commands.CommandException;
-import com.sk89q.minecraft.util.commands.WrappedCommandSender;
+import com.sk89q.minecraft.util.commands.exceptions.CommandException;
+import com.sk89q.minecraft.util.commands.wrapped.WrappedCommandSender;
 
 /**
  * Commands that wish to display a paginated list of results can use this class to do

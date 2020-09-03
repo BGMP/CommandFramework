@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import com.sk89q.minecraft.util.commands.WrappedCommandSender;
+import com.sk89q.minecraft.util.commands.wrapped.WrappedCommandSender;
 
 public class BukkitWrappedCommandSender implements WrappedCommandSender {
     public BukkitWrappedCommandSender(CommandSender wrapped) {

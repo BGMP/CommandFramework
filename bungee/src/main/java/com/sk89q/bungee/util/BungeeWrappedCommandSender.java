@@ -2,7 +2,7 @@ package com.sk89q.bungee.util;
 
 import net.md_5.bungee.api.CommandSender;
 
-import com.sk89q.minecraft.util.commands.WrappedCommandSender;
+import com.sk89q.minecraft.util.commands.wrapped.WrappedCommandSender;
 
 public class BungeeWrappedCommandSender implements WrappedCommandSender {
     public BungeeWrappedCommandSender(CommandSender wrapped) {

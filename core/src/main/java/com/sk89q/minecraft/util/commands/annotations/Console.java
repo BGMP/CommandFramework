@@ -17,34 +17,15 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.commands.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Indicates a nested command. Mark methods with this annotation to tell
- * {@link CommandsManager} that a method is merely a shell for child
- * commands. Note that the body of a method marked with this annotation
- * will never called. Additionally, not all fields of {@link Command} apply
- * when it is used in conjunction with this annotation, although both
- * are still required.
+ * This annotation indicates that a command can be used from the console.
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NestedCommand {
-
-    /**
-     * A list of classes with the child commands.
-     *
-     * @return a list of classes
-     */
-    Class<?>[] value();
-
-    /**
-     * If set to true it will execute the body of the tagged method.
-     *
-     * @return true to execute the body of the annotated method
-     */
-    boolean executeBody() default true;
+public @interface Console {
 
 }

@@ -1,8 +1,9 @@
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.commands.exceptions;
 
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
+import com.sk89q.minecraft.util.commands.CommandContext;
 
 /**
  * Throw this exception out of a command method to suggest completions for the command.
