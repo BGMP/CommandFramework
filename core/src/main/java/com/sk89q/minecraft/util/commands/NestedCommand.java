@@ -45,6 +45,6 @@ public @interface NestedCommand {
      *
      * @return true to execute the body of the annotated method
      */
-    boolean executeBody() default false;
+    boolean executeBody() default true;
 
 }

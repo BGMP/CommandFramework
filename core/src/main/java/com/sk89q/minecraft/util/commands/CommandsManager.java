@@ -526,7 +526,7 @@ public abstract class CommandsManager<T> {
         //  - /cmd <arg1> - @NestedCommand(executeBody = false) will always go to the nested command class not matter the args
         final NestedCommand nestedAnnot = method.getAnnotation(NestedCommand.class);
 
-        if (nestedAnnot != null && (argsCount > 0 || nestedAnnot.executeBody())) {
+        if (nestedAnnot != null && (argsCount > 0 || !nestedAnnot.executeBody())) {
             if (argsCount == 0) {
                 throw new MissingNestedCommandException("Sub-command required.",
                                                         getNestedUsage(args, level, method, player));

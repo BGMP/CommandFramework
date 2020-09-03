@@ -55,8 +55,9 @@ public class ExampleNestedCommand {
         )
         @CommandPermissions("hello.command")
         @CommandScopes({"player"})
-        @NestedCommand(ExampleNestedCommand.class)
+        @NestedCommand(value = ExampleNestedCommand.class, executeBody = true)
         public static void hello(final CommandContext args, final CommandSender sender) {
+            sender.sendMessage("I'm the method body.");
         }
     }
 
