@@ -17,7 +17,7 @@
   <distributionManagement>
     <snapshotRepository>
       <id>bgm</id>
-      <url>ftp://bgmp.cl/www</url>
+      <url>scpexe://maven.bgmp.cl/repo</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -33,7 +33,7 @@
     <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ftp</artifactId>
+        <artifactId>wagon-ssh-external</artifactId>
         <version>1.0-beta-6</version>
       </extension>
     </extensions>
