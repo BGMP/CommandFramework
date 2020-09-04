@@ -1,4 +1,4 @@
-package com.sk89q.minecraft.util.commands;
+package com.sk89q.minecraft.util.pagination;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @see https://github.com/Bukkit/Bukkit/blob/master/src/main/java/org/bukkit/ChatColor.java
  */
-public enum ChatColor {
+enum ChatColor {
     /**
      * Represents black
      */
@@ -159,7 +159,7 @@ public enum ChatColor {
      * Gets the color represented by the specified color code
      *
      * @param code Code to check
-     * @return Associative {@link org.bukkit.ChatColor} with the given code, or null if it doesn't exist
+     * @return Associative ChatColor with the given code, or null if it doesn't exist
      */
     public static ChatColor getByChar(char code) {
         return BY_CHAR.get(code);
@@ -169,7 +169,7 @@ public enum ChatColor {
      * Gets the color represented by the specified color code
      *
      * @param code Code to check
-     * @return Associative {@link org.bukkit.ChatColor} with the given code, or null if it doesn't exist
+     * @return Associative ChatColor with the given code, or null if it doesn't exist
      */
     public static ChatColor getByChar(String code) {
         if (code == null) throw new NullPointerException("Code cannot be null");
