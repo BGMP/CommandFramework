@@ -3,9 +3,14 @@
   <groupId>com.sk89q</groupId>
   <artifactId>command-framework-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>${revision}</version>
   <name>Sk89q Command Framework</name>
   <description>sk89q's command system from WorldEdit factored out</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <revision>1.0.1-SNAPSHOT</revision>
+  </properties>
 
   <modules>
     <module>core</module>
@@ -60,8 +65,4 @@
       </plugin>
     </plugins>
   </build>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 </project>
