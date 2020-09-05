@@ -41,6 +41,11 @@
         <artifactId>wagon-ssh-external</artifactId>
         <version>1.0-beta-6</version>
       </extension>
+      <extension>
+        <groupId>fr.jcgay.maven.extension</groupId>
+        <artifactId>unique-revision-maven-filtering</artifactId>
+        <version>1.3</version>
+      </extension>
     </extensions>
     <sourceDirectory>${project.basedir}/src/main/java/</sourceDirectory>
 
