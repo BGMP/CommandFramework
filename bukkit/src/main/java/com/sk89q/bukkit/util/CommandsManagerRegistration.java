@@ -22,6 +22,7 @@ package com.sk89q.bukkit.util;
 import com.sk89q.minecraft.util.commands.annotations.Command;
 import com.sk89q.minecraft.util.commands.annotations.CommandPermissions;
 import com.sk89q.minecraft.util.commands.CommandsManager;
+import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.Plugin;
@@ -54,25 +55,33 @@ public class CommandsManagerRegistration extends CommandRegistration {
     }
 
     public boolean register(Class<?> clazz) {
-        return register(clazz, null);
+        return register(clazz, null, null);
     }
 
-    public <T> boolean register(Class<T> clazz, @Nullable Provider<? extends T> provider) {
-        return registerAll(commands.registerMethods(clazz, null, provider));
+    /* Allows for commands to specify aliases at registration time */
+    public boolean register(Class<?> clazz, String[] aliases) {
+        return register(clazz, null, aliases);
     }
 
-    public boolean registerAll(List<Command> registered) {
+    public <T> boolean register(Class<T> clazz, @Nullable Provider<? extends T> provider, String[] aliases) {
+        return registerAll(commands.registerMethods(clazz, null, provider), aliases);
+    }
+
+    public boolean registerAll(List<Command> registered, String[] aliases) {
         List<CommandInfo> toRegister = new ArrayList<CommandInfo>();
         for (Command command : registered) {
             String[] permissions = null;
             Method cmdMethod = commands.getMethods().get(null).get(command.aliases()[0]);
-            if(cmdMethod != null) {
-                if(cmdMethod.isAnnotationPresent(CommandPermissions.class)) {
+            if (cmdMethod != null) {
+                if (cmdMethod.isAnnotationPresent(CommandPermissions.class)) {
                     permissions = cmdMethod.getAnnotation(CommandPermissions.class).value();
                 }
             }
 
-            toRegister.add(new CommandInfo(command.usage(), command.desc(), command.aliases(), commands, permissions));
+            String[] cmdAliases = command.aliases();
+            if (aliases != null) cmdAliases = (String[]) ArrayUtils.addAll(command.aliases(), aliases);
+
+            toRegister.add(new CommandInfo(command.usage(), command.desc(), cmdAliases, commands, permissions));
         }
 
         return register(toRegister);
