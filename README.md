@@ -19,7 +19,6 @@ This project is available for anyone to use, and you may implement it with ease:
 
 **Bukkit**
 ```xml
-<!-- Bukkit -->
 <dependency>
     <groupId>com.sk89q</groupId>
     <artifactId>command-framework-bukkit</artifactId>
