@@ -1,20 +1,53 @@
-sk89q-command-framework
-=======================
+CommandFramework
+---
 
-**NOTE**: This repository is no longer maintained, but a [second iteration](https://github.com/Electroid/intake) of this framework is still active.
+The simplest command framework for Bukkit & Bungee!
 
-sk89q-command-framework is the command framework from sk89q's WorldEdit. It has been factored out so it may be used in other projects without having to include WorldEdit as a dependency.
+This is the old command framework from sk89q's WorldEdit. It has been factored out and modified so it may be used in
+other projects without having to include WorldEdit as a dependency.
 
-Compiling
----------
+## Usage
+This project is available for anyone to use, and you may implement it with ease:
 
-You need to have Maven installed (http://maven.apache.org). Once installed, simply run:
+**Maven Repository**
+```xml
+<repository>
+    <id>bgm</id>
+    <url>https://maven.bgmp.cl/repo/</url>
+</repository>
+```
 
-    mvn clean install
+**Bukkit**
+```xml
+<!-- Bukkit -->
+<dependency>
+    <groupId>com.sk89q</groupId>
+    <artifactId>command-framework-bukkit</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+</dependency>
+```
 
-Maven will automatically download dependencies for you. Note: For that to work, be sure to add Maven to your "PATH".
+**Bungee**
+```xml
+<dependency>
+    <groupId>com.sk89q</groupId>
+    <artifactId>command-framework-bungee</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+</dependency>
+```
 
-Contributing
-------------
+Documentation is still being worked on, but for a hands-on example I have taken care of arranging a
+[simple plugin](https://github.com/BGMP/CommandFramework/tree/master/example-commands-bukkit) to illustrate
+the framework's features and usage.
 
-Your submissions have to be licensed under the GNU General Public License v3.
+## Prerequisites
+* Java 8 or above
+* [Maven](http://maven.apache.org/) (Dependency Management)
+
+## Compiling
+Clone the repository, and launch your command prompt within it to run the following Maven command:
+
+  > `mvn clean package`
+
+## Contributing
+Your submissions have to be licenced under the GNU General Public Licence v3.
