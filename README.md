@@ -6,6 +6,9 @@ The simplest command framework for Bukkit & Bungee!
 This is the old command framework from sk89q's WorldEdit. It has been factored out and modified so it may be used in
 other projects without having to include WorldEdit as a dependency.
 
+The groupId of the project has been changed to prevent clashes with WorldEdit's command utility classes, given that
+it is usually present in upstream Minecraft servers.
+
 ## Usage
 This project is available for anyone to use, and you may implement it with ease:
 
@@ -20,7 +23,7 @@ This project is available for anyone to use, and you may implement it with ease:
 **Bukkit**
 ```xml
 <dependency>
-    <groupId>com.sk89q</groupId>
+    <groupId>cl.bgmp</groupId>
     <artifactId>command-framework-bukkit</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 </dependency>
@@ -29,7 +32,7 @@ This project is available for anyone to use, and you may implement it with ease:
 **Bungee**
 ```xml
 <dependency>
-    <groupId>com.sk89q</groupId>
+    <groupId>cl.bgmp</groupId>
     <artifactId>command-framework-bungee</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 </dependency>
