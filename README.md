@@ -25,7 +25,7 @@ This project is available for anyone to use, and you may implement it with ease:
 <dependency>
     <groupId>cl.bgmp</groupId>
     <artifactId>command-framework-bukkit</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ This project is available for anyone to use, and you may implement it with ease:
 <dependency>
     <groupId>cl.bgmp</groupId>
     <artifactId>command-framework-bungee</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
 </dependency>
 ```
 
