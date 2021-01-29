@@ -22,7 +22,7 @@
   <distributionManagement>
     <snapshotRepository>
       <id>bgm</id>
-      <url>ftp://maven.bgmp.cl/repo</url>
+      <url>ftp://maven.bgmp.cl/</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -44,7 +44,7 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ftp</artifactId>
-        <version>1.0-beta-6</version>
+        <version>3.0.0</version>
       </extension>
     </extensions>
     <sourceDirectory>${project.basedir}/src/main/java/</sourceDirectory>
