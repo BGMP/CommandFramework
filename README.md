@@ -16,7 +16,7 @@ This project is available for anyone to use, and you may implement it with ease:
 ```xml
 <repository>
     <id>bgm</id>
-    <url>https://maven.bgmp.cl/repo/</url>
+    <url>https://maven.bgmp.cl/</url>
 </repository>
 ```
 
