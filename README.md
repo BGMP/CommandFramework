@@ -1,7 +1,7 @@
 CommandFramework
 ---
 
-The simplest command framework for Bukkit & Bungee!
+The simplest command framework for Bukkit & Bungee 1.8 - 1.16.5!
 
 This is the old command framework from sk89q's WorldEdit. It has been factored out and modified so it may be used in
 other projects without having to include WorldEdit as a dependency.
