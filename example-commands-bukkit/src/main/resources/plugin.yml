@@ -1,6 +1,6 @@
 name: ExampleCommandsBukkit
 version: '1.0'
-main: cl.bgmp.example.commands.bukkit.ExampleCommandsBukkit
+main: cl.bgm.example.commands.bukkit.ExampleCommandsBukkit
 api-version: '1.13'
 authors: [BGMP]
 description: Example Bukkit Commands to showcase the framework

@@ -16,14 +16,14 @@ This project is available for anyone to use, and you may implement it with ease:
 ```xml
 <repository>
     <id>bgm</id>
-    <url>https://maven.bgmp.cl/</url>
+    <url>https://maven.bgm.cl/</url>
 </repository>
 ```
 
 **Bukkit**
 ```xml
 <dependency>
-    <groupId>cl.bgmp</groupId>
+    <groupId>cl.bgm</groupId>
     <artifactId>command-framework-bukkit</artifactId>
     <version>1.0.3-SNAPSHOT</version>
 </dependency>
@@ -32,7 +32,7 @@ This project is available for anyone to use, and you may implement it with ease:
 **Bungee**
 ```xml
 <dependency>
-    <groupId>cl.bgmp</groupId>
+    <groupId>cl.bgm</groupId>
     <artifactId>command-framework-bungee</artifactId>
     <version>1.0.3-SNAPSHOT</version>
 </dependency>

@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cl.bgmp</groupId>
+  <groupId>cl.bgm</groupId>
   <artifactId>command-framework-parent</artifactId>
   <packaging>pom</packaging>
   <version>${revision}</version>
@@ -16,13 +16,13 @@
     <module>core</module>
     <module>bukkit</module>
     <module>bungee</module>
-    <!-- <module>example-commands-bukkit</module> Uncomment when needed -->
+    <module>example-commands-bukkit</module>
   </modules>
 
   <distributionManagement>
     <snapshotRepository>
       <id>bgm</id>
-      <url>ftp://maven.bgmp.cl/</url>
+      <url>ftp://maven.bgm.cl/</url>
     </snapshotRepository>
   </distributionManagement>
 

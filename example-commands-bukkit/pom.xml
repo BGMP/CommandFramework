@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>cl.bgmp</groupId>
+    <groupId>cl.bgm</groupId>
     <artifactId>command-framework-parent</artifactId>
     <version>${revision}</version>
   </parent>
@@ -27,9 +27,9 @@
     </dependency>
     <!-- Since we are doing Bukkit, add the command-framework-bukkit as dependency -->
     <dependency>
-      <groupId>cl.bgmp</groupId>
+      <groupId>cl.bgm</groupId>
       <artifactId>command-framework-bukkit</artifactId>
-      <version>1.0.2-SNAPSHOT</version>
+      <version>1.0.3-SNAPSHOT</version>
     </dependency>
     <!-- Add your injection assistant. If it doesn't ring a bell, just add this one below and you should be fine -->
     <dependency>
@@ -50,7 +50,7 @@
           <artifactSet>
             <includes>
               <!-- Make sure to shade these two in! -->
-              <include>cl.bgmp:command-framework-bukkit</include>
+              <include>cl.bgm:command-framework-bukkit</include>
               <include>javax.inject:javax.inject</include>
             </includes>
           </artifactSet>

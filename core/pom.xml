@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>cl.bgmp</groupId>
+        <groupId>cl.bgm</groupId>
         <artifactId>command-framework-parent</artifactId>
         <version>${revision}</version>
     </parent>
