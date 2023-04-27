@@ -1,5 +1,6 @@
 package cl.bgm.example.commands.bukkit.commands;
 
+import cl.bgm.minecraft.util.commands.CommandScope;
 import cl.bgm.minecraft.util.commands.annotations.Command;
 import cl.bgm.minecraft.util.commands.CommandContext;
 import cl.bgm.minecraft.util.commands.annotations.CommandPermissions;
@@ -20,7 +21,7 @@ public class ExampleCommand {
             max = 1
     )
     @CommandPermissions("example.command")
-    @CommandScopes({"player"})
+    @CommandScopes(CommandScope.PLAYER)
     public static void example(final CommandContext args, final CommandSender sender) {
         if (args.argsLength() == 1) {
             sender.sendMessage("I'm a " + args.getString(0));

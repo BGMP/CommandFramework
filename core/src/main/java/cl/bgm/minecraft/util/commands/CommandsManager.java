@@ -659,7 +659,7 @@ public abstract class CommandsManager<T> {
             return true;
         }
 
-        for (String scope : scopes.value()) {
+        for (CommandScope scope : scopes.value()) {
             if (scopeMatches(player, scope)) {
                 return true;
             }
@@ -684,7 +684,7 @@ public abstract class CommandsManager<T> {
      * @param scope the permission
      * @return true if the scope matches
      */
-    public abstract boolean scopeMatches(T player, String scope);
+    public abstract boolean scopeMatches(T player, CommandScope scope);
 
     /**
      * Get the injector used to create new instances. This can be

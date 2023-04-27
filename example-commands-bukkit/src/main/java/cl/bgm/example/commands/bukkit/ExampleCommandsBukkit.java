@@ -4,6 +4,8 @@ import cl.bgm.bukkit.util.BukkitCommandsManager;
 import cl.bgm.bukkit.util.CommandsManagerRegistration;
 import cl.bgm.example.commands.bukkit.commands.ExampleNestedCommand;
 import cl.bgm.example.commands.bukkit.commands.ExampleCommand;
+import cl.bgm.minecraft.util.commands.CommandScope;
+import cl.bgm.minecraft.util.commands.annotations.CommandScopes;
 import cl.bgm.minecraft.util.commands.exceptions.CommandException;
 import cl.bgm.minecraft.util.commands.exceptions.CommandPermissionsException;
 import cl.bgm.minecraft.util.commands.exceptions.CommandUsageException;
@@ -31,11 +33,13 @@ public class ExampleCommandsBukkit extends JavaPlugin {
         try {
             this.commandsManager.execute(command.getName(), args, sender, sender);
         } catch (ScopeMismatchException exception) {
-            String[] scopes = exception.getScopes();
-            if (!Arrays.asList(scopes).contains("player")) {
-                sender.sendMessage("You must use the console to execute this command.");
-            } else {
-                sender.sendMessage("You must be a player to execute this command.");
+            CommandScope[] scopes = exception.getScopes();
+            if (!Arrays.asList(scopes).contains(CommandScope.PLAYER)) {
+                sender.sendMessage("A player cannot execute this command.");
+            } else if (!Arrays.asList(scopes).contains(CommandScope.CONSOLE)) {
+                sender.sendMessage("The console cannot execute this command.");
+            } else if (!Arrays.asList(scopes).contains(CommandScope.BLOCK)) {
+                sender.sendMessage("A command block cannot execute this command.");
             }
         } catch (CommandPermissionsException exception) {
             sender.sendMessage("You do not have permission.");

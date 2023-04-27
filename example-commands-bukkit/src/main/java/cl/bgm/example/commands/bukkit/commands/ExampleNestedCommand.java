@@ -1,5 +1,6 @@
 package cl.bgm.example.commands.bukkit.commands;
 
+import cl.bgm.minecraft.util.commands.CommandScope;
 import cl.bgm.minecraft.util.commands.annotations.Command;
 import cl.bgm.minecraft.util.commands.CommandContext;
 import cl.bgm.minecraft.util.commands.annotations.CommandPermissions;
@@ -22,7 +23,7 @@ public class ExampleNestedCommand {
             max = 1
     )
     @CommandPermissions("hello.command.me")
-    @CommandScopes({"player"})
+    @CommandScopes(CommandScope.PLAYER)
     public static void me(final CommandContext args, final CommandSender sender) {
         if (args.argsLength() == 0) {
             sender.sendMessage("hello me");
@@ -38,7 +39,7 @@ public class ExampleNestedCommand {
             max = 1
     )
     @CommandPermissions("hello.command.you")
-    @CommandScopes({"player"})
+    @CommandScopes(CommandScope.PLAYER)
     public static void you(final CommandContext args, final CommandSender sender) {
         if (args.argsLength() == 0) {
             sender.sendMessage("hello you");
@@ -54,7 +55,7 @@ public class ExampleNestedCommand {
                 desc = "Hello node command."
         )
         @CommandPermissions("hello.command")
-        @CommandScopes({"player"})
+        @CommandScopes(CommandScope.PLAYER)
         @NestedCommand(value = ExampleNestedCommand.class, executeBody = true)
         public static void hello(final CommandContext args, final CommandSender sender) {
             sender.sendMessage("I'm the method body.");

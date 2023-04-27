@@ -1,5 +1,7 @@
 package cl.bgm.minecraft.util.commands.annotations;
 
+import cl.bgm.minecraft.util.commands.CommandScope;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -13,5 +15,5 @@ public @interface CommandScopes {
      * The command's target scopes, which by default are all possible senders
      * @return them
      */
-    String[] value() default {"console", "player", "block"};
+    CommandScope[] value() default { CommandScope.ANY };
 }

@@ -1,5 +1,6 @@
 package cl.bgm.bukkit.util;
 
+import cl.bgm.minecraft.util.commands.CommandScope;
 import cl.bgm.minecraft.util.commands.CommandsManager;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;
@@ -14,13 +15,15 @@ public class BukkitCommandsManager extends CommandsManager<CommandSender> {
     }
 
     @Override
-    public boolean scopeMatches(CommandSender player, String scope) {
-        switch (scope.toLowerCase()) {
-            case "player":
+    public boolean scopeMatches(CommandSender player, CommandScope scope) {
+        switch (scope) {
+            case ANY:
+                return true;
+            case PLAYER:
                 return player instanceof Player;
-            case "console":
+            case CONSOLE:
                 return player instanceof ConsoleCommandSender;
-            case "block":
+            case BLOCK:
                 return player instanceof BlockCommandSender;
             default:
                 return false;
