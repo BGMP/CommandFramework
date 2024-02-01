@@ -16,7 +16,7 @@ This project is available for anyone to use, and you may implement it with ease:
 ```xml
 <repository>
     <id>github</id>
-    <url>https://maven.pkg.github.com/BGMP/AllTranslations</url>
+    <url>https://maven.pkg.github.com/BGMP/CommandFramework</url>
 </repository>
 ```
 
