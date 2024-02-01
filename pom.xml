@@ -20,10 +20,11 @@
   </modules>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>bgm</id>
-      <url>ftp://maven.bgm.cl/</url>
-    </snapshotRepository>
+    <repository>
+      <id>github</id>
+      <name>GitHub BGMP Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/BGMP/CommandFramework</url>
+    </repository>
   </distributionManagement>
 
   <issueManagement>
