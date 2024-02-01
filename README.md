@@ -15,8 +15,8 @@ This project is available for anyone to use, and you may implement it with ease:
 **Maven Repository**
 ```xml
 <repository>
-    <id>bgm</id>
-    <url>https://maven.bgm.cl/</url>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/BGMP/AllTranslations</url>
 </repository>
 ```
 
@@ -25,7 +25,7 @@ This project is available for anyone to use, and you may implement it with ease:
 <dependency>
     <groupId>cl.bgm</groupId>
     <artifactId>command-framework-bukkit</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ This project is available for anyone to use, and you may implement it with ease:
 <dependency>
     <groupId>cl.bgm</groupId>
     <artifactId>command-framework-bungee</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 
