@@ -10,7 +10,11 @@ The groupId of the project has been changed to prevent clashes with WorldEdit's 
 it is usually present in upstream Minecraft servers.
 
 ## Usage
-This project is available for anyone to use, and you may implement it with ease:
+This project is available for anyone to use. In order to include this project as a dependency, you must
+[authenticate to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages)
+via your Maven `settings.xml`.
+
+After you accomplish that, simply add the repository and dependencies as follows:
 
 **Maven Repository**
 ```xml
