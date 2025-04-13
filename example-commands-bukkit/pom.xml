@@ -29,7 +29,7 @@
     <dependency>
       <groupId>cl.bgm</groupId>
       <artifactId>command-framework-bukkit</artifactId>
-      <version>1.0.3-SNAPSHOT</version>
+      <version>1.0.4-SNAPSHOT</version>
     </dependency>
     <!-- Add your injection assistant. If it doesn't ring a bell, just add this one below and you should be fine -->
     <dependency>
